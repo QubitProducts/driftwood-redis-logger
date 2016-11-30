@@ -91,11 +91,11 @@ module.exports = function cli (getRedis, options) {
       message: log.message
     })
   }
-}
 
-function matches (log) {
-  return fieldsToMatch.some((field) => {
-    var value = log[field] || ''
-    return wildstring.match(pattern, stripAnsi(field).toLowerCase())
-  })
+  function matches (log) {
+    return fieldsToMatch.some((field) => {
+      var value = log[field] || ''
+      return wildstring.match(pattern, stripAnsi(field).toLowerCase())
+    })
+  }
 }
